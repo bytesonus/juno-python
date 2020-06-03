@@ -14,10 +14,11 @@ For all other basic needs, you can get away without worrying about any of that.
 
 ```python
 import asyncio
+from typings import Dict, Any
 
 from juno_python import JunoModule
 
-def print_hello():
+def print_hello(args: Dict[str, Any]):
 	print('Hello')
 
 def main():
