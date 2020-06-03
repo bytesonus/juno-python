@@ -22,13 +22,13 @@ def print_hello(args: Dict[str, Any]):
 	print('Hello')
 
 def main():
-    module = JunoModule.default('./path/to/juno.sock')
+	module = JunoModule.default('./path/to/juno.sock')
 	# The None below is used to mark dependencies
-    await module.initialize('module-name', '1.0.0', None)
-    print("Initialized!")
-    await module.declare_function('print_hello', print_hello)
-    # The None below marks the arguments passed to the function
-    await module.call_function('module2.print_hello_world', None)    
+	await module.initialize('module-name', '1.0.0', None)
+	print("Initialized!")
+	await module.declare_function('print_hello', print_hello)
+	# The None below marks the arguments passed to the function
+	await module.call_function('module2.print_hello_world', None)    
 	asyncio.get_running_loop().run_forever()
 
 if __name__ == "__main__":
